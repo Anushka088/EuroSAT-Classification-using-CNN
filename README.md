@@ -15,7 +15,6 @@
         pre { background: #2d3436; color: #dfe6e9; padding: 15px; border-radius: 5px; overflow-x: auto; }
         .container { border: 1px solid #ddd; border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         ul { list-style-type: square; }
-        .image-placeholder { background: #e0e0e0; border: 2px dashed #bbb; padding: 40px; text-align: center; margin: 20px 0; font-style: italic; }
     </style>
 </head>
 <body>
@@ -38,17 +37,13 @@
         for geospatial analysis and urban planning.
     </p>
 
-    
-
     <h2>🏗️ Technical Architecture</h2>
     <ul>
         <li><strong>Backbone:</strong> ResNet-50 (Transfer Learning from ImageNet)</li>
         <li><strong>Data Pipeline:</strong> Customized <code>torchvision</code> transforms including normalization and random flips for robust augmentation.</li>
-        <li><strong>Classification Head:</strong> Fully connected layers with Dropout (0.3) to prevent overfitting on 64x64 satellite patches.</li>
+        <li><strong>Classification Head:</strong> Fully connected layers with Dropout (0.3) to prevent overfitting.</li>
         <li><strong>Optimization:</strong> Adam Optimizer with Negative Log-Likelihood Loss (NLLLoss).</li>
     </ul>
-
-    
 
     <h2>📊 Dataset Details</h2>
     <p>
@@ -59,17 +54,15 @@
     <h2>📈 Key Performance Results</h2>
     <ul>
         <li><strong>Accuracy:</strong> ~96% on Validation Set.</li>
-        <li><strong>Efficiency:</strong> Leveraged GPU acceleration to achieve convergence within 5 epochs.</li>
+        <li><strong>Efficiency:</strong> Leveraged GPU acceleration (T4) in Colab for fast convergence.</li>
         <li><strong>Evaluation:</strong> Performance verified via Confusion Matrix and F1-score analysis.</li>
     </ul>
-
-    
 
     <h2>🛠️ How to Run</h2>
     <p>1. Install the required libraries:</p>
     <pre>pip install torch torchvision matplotlib seaborn scikit-learn tqdm</pre>
     
-    <p>2. Open the <code>.ipynb</code> file in Google Colab, upload your <code>EuroSAT_Upload.zip</code>, and run all cells.</p>
+    <p>2. Open the notebook in Google Colab, upload your <code>EuroSAT_Upload.zip</code>, and execute the training cells.</p>
 
     <hr>
     <p style="text-align: center;"><em>Developed for Portfolio - 2024</em></p>
